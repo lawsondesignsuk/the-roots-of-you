@@ -33,6 +33,15 @@ p.prefix {
     color: #c590a1;
 }
 
+.disclaimer {
+    margin: auto;
+    padding: 50px;
+    text-align: center;
+    margin: auto;
+    background-color: #1e863a;
+    color: white;
+}
+
 .btn {
     text-decoration: none;
     text-align: center;
