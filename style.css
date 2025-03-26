@@ -369,6 +369,7 @@ transition: transform 0.2s ease, box-shadow 0.2s;
     gap: 25px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: stretch; /* Ensures all items stretch to the same height */
+    margin: auto;
 }
 
 .services-box {
@@ -380,6 +381,7 @@ transition: transform 0.2s ease, box-shadow 0.2s;
     min-height: 400px;
     height: 100%; /* Ensures all boxes stretch equally */
     overflow: hidden; /* Prevents content from overflowing */
+    margin: auto;
 }
 
 .services-box img {
