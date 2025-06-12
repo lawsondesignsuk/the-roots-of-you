@@ -71,24 +71,29 @@
           
 <main>
 
-    <section class="booking-container">
-        <div class="booking-content">
-            <section class="booking-section">
-                <h2>Book Your Appointment</h2>
-                <form action="https://formspree.io/f/movwdkzj" method="POST" class="booking-form">
-    <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required>
-    </div>
+<section class="booking-container">
+  <div class="booking-content">
+    <section class="booking-section">
+      <h2>Book Your Appointment</h2>
 
-    <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="_replyto" required>
-    </div>
+      <form action="https://formspree.io/f/movwdkzj" method="POST" class="booking-form">
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
 
-    <div class="form-group">
-        <label for="service">Select Service</label>
-        <select id="service" name="service" required>
+        <!-- Email Address -->
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="_replyto" required>
+        </div>
+
+        <!-- Service Selection -->
+        <div class="form-group">
+          <label for="service">Select Service</label>
+          <select id="service" name="service" required>
+            <option value="">-- Choose a service --</option>
             <option value="Reiki - 30 Minutes">Reiki - 30 Minutes</option>
             <option value="Reiki - 60 Minutes">Reiki - 60 Minutes</option>
             <option value="Reiki - 90 Minutes">Reiki - 90 Minutes</option>
@@ -98,51 +103,36 @@
             <option value="Hot Stone Massage - 30 Minutes">Hot Stone Massage - 30 Minutes</option>
             <option value="Hot Stone Massage - 60 Minutes">Hot Stone Massage - 60 Minutes</option>
             <option value="Hot Stone Massage - 90 Minutes">Hot Stone Massage - 90 Minutes</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="time">Preferred Appointment Time</label>
-        <input type="datetime-local" id="time" name="appointment_time" required>
-    </div>
-
-    <div class="form-group">
-        <label for="message">Message or Special Requests</label>
-        <textarea id="message" name="message"></textarea>
-    </div>
-
-    <!-- Spam prevention (invisible honeypot) -->
-    <input type="text" name="_gotcha" style="display:none">
-
-    <div class="form-group">
-        <button type="submit">Book Appointment</button>
-    </div>
-</form>
-
-            </section>
-        
-            <script>
-                // JavaScript to restrict date and time selection
-                document.querySelector('.booking-form').addEventListener('submit', function(event) {
-                    const appointmentTime = document.getElementById('time').value;
-                    const appointmentDate = new Date(appointmentTime);
-                
-                    // Get the day of the week (0=Sunday, 1=Monday, ..., 6=Saturday)
-                    const dayOfWeek = appointmentDate.getDay();
-                    const hourOfDay = appointmentDate.getHours();
-                    
-                    // Check if the day is Monday to Friday (1-5) and time is between 5 PM (17:00) and 9 PM (21:00)
-                    if (dayOfWeek === 0 || dayOfWeek === 6) {
-                        alert("Appointments are only available from Monday to Friday.");
-                        event.preventDefault(); // Prevent form submission
-                    } else if (hourOfDay < 17 || hourOfDay >= 21) {
-                        alert("Appointments are only available between 5 PM and 9 PM.");
-                        event.preventDefault(); // Prevent form submission
-                    }
-                });
-                </script>
+          </select>
         </div>
+
+        <!-- Appointment Date and Time -->
+        <div class="form-group">
+          <label for="time">Preferred Appointment Time</label>
+          <input type="datetime-local" id="time" name="appointment_time" required>
+        </div>
+
+        <!-- Special Requests -->
+        <div class="form-group">
+          <label for="message">Message or Special Requests</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+
+        <!-- Honeypot field for spam prevention -->
+        <input type="text" name="_gotcha" style="display:none">
+
+        <!-- Optional: Redirect after submission -->
+        <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html">
+
+        <!-- Submit Button -->
+        <div class="form-group">
+          <button type="submit">Book Appointment</button>
+        </div>
+      </form>
     </section>
+  </div>
+</section>
+
 
     <script src="script.js"></script>
             <section class="gallery-container">
